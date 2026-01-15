@@ -35,42 +35,42 @@
             <div class="container">
                 <h2>Core Algorithms & Models</h2>
                 <div class="algorithm-grid">
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('simclusters')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('simclusters')" tabindex="0" role="button" aria-label="View details about SimClusters algorithm">
                         <h3>SimClusters</h3>
                         <p>Community detection and sparse embeddings</p>
                         <span class="algorithm-tag">Clustering</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('twhin')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('twhin')" tabindex="0" role="button" aria-label="View details about TwHIN algorithm">
                         <h3>TwHIN</h3>
                         <p>Dense knowledge graph embeddings for Users and Posts</p>
                         <span class="algorithm-tag">Graph Neural Network</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('realgraph')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('realgraph')" tabindex="0" role="button" aria-label="View details about Real Graph algorithm">
                         <h3>Real Graph</h3>
                         <p>Predicts likelihood of user interactions</p>
                         <span class="algorithm-tag">Prediction</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('tweepcred')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('tweepcred')" tabindex="0" role="button" aria-label="View details about TweepCred algorithm">
                         <h3>TweepCred</h3>
                         <p>PageRank algorithm for user reputation</p>
                         <span class="algorithm-tag">PageRank</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('trust-safety')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('trust-safety')" tabindex="0" role="button" aria-label="View details about Trust & Safety models">
                         <h3>Trust & Safety</h3>
                         <p>Models for detecting NSFW or abusive content</p>
                         <span class="algorithm-tag">Classification</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('graphjet')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('graphjet')" tabindex="0" role="button" aria-label="View details about GraphJet algorithm">
                         <h3>GraphJet</h3>
                         <p>Real-time graph processing framework</p>
                         <span class="algorithm-tag">Graph Processing</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('heavy-ranker')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('heavy-ranker')" tabindex="0" role="button" aria-label="View details about Heavy Ranker algorithm">
                         <h3>Heavy Ranker</h3>
                         <p>Neural network for ranking candidate posts</p>
                         <span class="algorithm-tag">Deep Learning</span>
                     </div>
-                    <div class="algorithm-card" onclick="showAlgorithmDetail('light-ranker')">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('light-ranker')" tabindex="0" role="button" aria-label="View details about Light Ranker algorithm">
                         <h3>Light Ranker</h3>
                         <p>Fast ranking model for initial filtering</p>
                         <span class="algorithm-tag">Ranking</span>
@@ -164,9 +164,9 @@
     </main>
 
     <!-- Algorithm Detail Modal -->
-    <div id="algorithmModal" class="modal">
+    <div id="algorithmModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="close" onclick="closeModal()" aria-label="Close modal" type="button">&times;</button>
             <div id="modalBody"></div>
         </div>
     </div>

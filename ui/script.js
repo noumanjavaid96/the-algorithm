@@ -197,12 +197,20 @@ function closeModal() {
 }
 
 // Close modal when clicking outside
-window.onclick = function(event) {
+window.addEventListener('click', function(event) {
     const modal = document.getElementById('algorithmModal');
     if (event.target === modal) {
         modal.style.display = 'none';
     }
-}
+});
+
+// Close modal when pressing Escape key
+window.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('algorithmModal');
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+        closeModal();
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -250,5 +258,15 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s, transform 0.6s';
         observer.observe(card);
+    });
+    
+    // Add keyboard support for algorithm cards
+    document.querySelectorAll('.algorithm-card').forEach(card => {
+        card.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                this.click();
+            }
+        });
     });
 });
