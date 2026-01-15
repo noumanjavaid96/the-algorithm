@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X's Recommendation Algorithm - Interactive Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">X's Algorithm</h1>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#algorithms">Algorithms</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="overview" class="section hero">
+            <div class="container">
+                <h1>X's Recommendation Algorithm</h1>
+                <p class="subtitle">Interactive documentation of the open-source recommendation system</p>
+                <div class="hero-content">
+                    <p>X's Recommendation Algorithm is a set of services and jobs that are responsible for serving feeds of posts and other content across all X product surfaces. This interactive UI provides an overview of the key algorithms, services, and architecture components.</p>
+                    <a href="#algorithms" class="btn btn-primary">Explore Algorithms</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="algorithms" class="section">
+            <div class="container">
+                <h2>Core Algorithms & Models</h2>
+                <div class="algorithm-grid">
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('simclusters')">
+                        <h3>SimClusters</h3>
+                        <p>Community detection and sparse embeddings</p>
+                        <span class="algorithm-tag">Clustering</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('twhin')">
+                        <h3>TwHIN</h3>
+                        <p>Dense knowledge graph embeddings for Users and Posts</p>
+                        <span class="algorithm-tag">Graph Neural Network</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('realgraph')">
+                        <h3>Real Graph</h3>
+                        <p>Predicts likelihood of user interactions</p>
+                        <span class="algorithm-tag">Prediction</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('tweepcred')">
+                        <h3>TweepCred</h3>
+                        <p>PageRank algorithm for user reputation</p>
+                        <span class="algorithm-tag">PageRank</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('trust-safety')">
+                        <h3>Trust & Safety</h3>
+                        <p>Models for detecting NSFW or abusive content</p>
+                        <span class="algorithm-tag">Classification</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('graphjet')">
+                        <h3>GraphJet</h3>
+                        <p>Real-time graph processing framework</p>
+                        <span class="algorithm-tag">Graph Processing</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('heavy-ranker')">
+                        <h3>Heavy Ranker</h3>
+                        <p>Neural network for ranking candidate posts</p>
+                        <span class="algorithm-tag">Deep Learning</span>
+                    </div>
+                    <div class="algorithm-card" onclick="showAlgorithmDetail('light-ranker')">
+                        <h3>Light Ranker</h3>
+                        <p>Fast ranking model for initial filtering</p>
+                        <span class="algorithm-tag">Ranking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section bg-light">
+            <div class="container">
+                <h2>System Architecture</h2>
+                <div class="architecture-content">
+                    <div class="architecture-diagram">
+                        <h3>For You Timeline Flow</h3>
+                        <div class="flow-diagram">
+                            <div class="flow-step">
+                                <div class="flow-box candidate-source">
+                                    <h4>Candidate Sources</h4>
+                                    <ul>
+                                        <li>Search Index (In-Network)</li>
+                                        <li>UTEG (GraphJet)</li>
+                                        <li>FRS</li>
+                                        <li>Tweet Mixer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">
+                                <div class="flow-box ranking">
+                                    <h4>Ranking</h4>
+                                    <ul>
+                                        <li>Light Ranker (Pre-filter)</li>
+                                        <li>Heavy Ranker (Neural Net)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">
+                                <div class="flow-box mixing">
+                                    <h4>Mixing & Filtering</h4>
+                                    <ul>
+                                        <li>Home Mixer</li>
+                                        <li>Visibility Filters</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">
+                                <div class="flow-box output">
+                                    <h4>For You Timeline</h4>
+                                    <p>Personalized feed delivered to user</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Key Services & Components</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Data Services</h3>
+                        <ul>
+                            <li><strong>TweetyPie:</strong> Core post reading/writing service</li>
+                            <li><strong>Unified User Actions:</strong> Real-time user action stream</li>
+                            <li><strong>User Signal Service:</strong> Centralized platform for user signals</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Candidate Sources</h3>
+                        <ul>
+                            <li><strong>Search Index:</strong> In-Network posts (~50% of feed)</li>
+                            <li><strong>UTEG:</strong> User-Tweet-Entity Graph traversals</li>
+                            <li><strong>Follow Recommendation:</strong> Account & post recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Infrastructure</h3>
+                        <ul>
+                            <li><strong>Navi:</strong> High-performance ML serving (Rust)</li>
+                            <li><strong>Product Mixer:</strong> Feed building framework</li>
+                            <li><strong>TWML:</strong> Machine learning framework (TensorFlow)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Algorithm Detail Modal -->
+    <div id="algorithmModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 X Corp. Open Source Algorithm Documentation</p>
+            <p><a href="https://github.com/twitter/the-algorithm" target="_blank">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
