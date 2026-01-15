@@ -175,9 +175,14 @@ function showAlgorithmDetail(algorithmKey) {
             
             <h3>Source Code</h3>
             <p>Location: <code>${algorithm.codeLocation}</code></p>
-            <a href="https://github.com/twitter/the-algorithm/tree/main/${algorithm.codeLocation}" 
-               target="_blank" 
-               class="code-link">View on GitHub</a>
+            ${algorithm.codeLocation.startsWith('External repository:') 
+                ? `<a href="https://${algorithm.codeLocation.replace('External repository: ', '')}" 
+                     target="_blank" 
+                     class="code-link">View on GitHub</a>`
+                : `<a href="https://github.com/twitter/the-algorithm/tree/main/${algorithm.codeLocation}" 
+                     target="_blank" 
+                     class="code-link">View on GitHub</a>`
+            }
         </div>
     `;
     
