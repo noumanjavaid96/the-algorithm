@@ -5,7 +5,6 @@ A comprehensive web interface to explore and understand Twitter's recommendation
 
 import streamlit as st
 import pandas as pd
-from pathlib import Path
 
 # Page configuration
 st.set_page_config(
