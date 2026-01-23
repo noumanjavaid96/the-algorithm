@@ -58,6 +58,23 @@ The core components of Recommended Notifications included in this repository are
 | Ranking | [pushservice-light-ranker](pushservice/src/main/python/models/light_ranking/README.md) | Light Ranker model used by pushservice to rank posts. Bridges candidate generation and heavy ranking by pre-selecting highly-relevant candidates from the initial huge candidate pool. |
 |         | [pushservice-heavy-ranker](pushservice/src/main/python/models/heavy_ranking/README.md) | Multi-task learning model to predict the probabilities that the target users will open and engage with the sent notifications. |
 
+## Interactive UI Documentation
+
+An interactive web-based UI is available to explore and understand the algorithms in this repository. The UI provides:
+- Overview of all core algorithms with detailed explanations
+- Interactive algorithm cards with technical details
+- System architecture visualization
+- Key services and components documentation
+
+To run the UI:
+```bash
+cd ui
+python3 -m http.server 8000
+# Then open http://localhost:8000 in your browser
+```
+
+See [ui/README.md](ui/README.md) for more details.
+
 ## Build and test code
 
 We include Bazel BUILD files for most components, but not a top-level BUILD or WORKSPACE file. We plan to add a more complete build and test system in the future.
